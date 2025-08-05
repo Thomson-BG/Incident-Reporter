@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const IncidentForm = ({ setIncidentReport, setParentEmail }) => {
   const [studentId, setStudentId] = useState('');
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [time, setTime] = useState('');
   const [incidentDescription, setIncidentDescription] = useState('');
   const [actionsTaken, setActionsTaken] = useState('');
