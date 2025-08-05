@@ -3,6 +3,7 @@ import './App.css';
 import IncidentForm from './IncidentForm';
 import IncidentReport from './IncidentReport';
 import ParentEmail from './ParentEmail';
+import SavedReports from './SavedReports';
 
 function App() {
   const [incidentReport, setIncidentReport] = useState('');
@@ -17,6 +18,7 @@ function App() {
       />
       {incidentReport && <IncidentReport report={incidentReport} />}
       {parentEmail && <ParentEmail email={parentEmail} />}
+      <SavedReports />
     </div>
   );
 }
