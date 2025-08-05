@@ -32,6 +32,11 @@ textarea {
   color: #fff;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: #ccc;
+}
+
 button {
   padding: 0.5rem;
   border-radius: 5px;
