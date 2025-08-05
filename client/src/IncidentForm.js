@@ -23,8 +23,9 @@ const IncidentForm = ({ setIncidentReport, setParentEmail }) => {
 
     setIncidentReport(report);
 
+    let email = '';
     if (generateParentEmail) {
-      const email = `
+      email = `
         Dear Parent/Guardian,
 
         This email is to inform you of an incident that occurred today involving your child, [STUDENT].
@@ -44,6 +45,15 @@ const IncidentForm = ({ setIncidentReport, setParentEmail }) => {
     } else {
       setParentEmail('');
     }
+
+    const savedReports = JSON.parse(localStorage.getItem('incident-reports')) || [];
+    const newReport = {
+      id: Date.now(),
+      report,
+      email,
+    };
+    savedReports.push(newReport);
+    localStorage.setItem('incident-reports', JSON.stringify(savedReports));
   };
 
   return (
